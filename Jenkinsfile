@@ -1,11 +1,10 @@
-def hello(){
-   sh 'echo "hello world"'
+def hello(String name = 'human'){
+   echo "hello ${name}"
 }
-
 node('jenkins_slave_01') {
    def mvnHome
    stage('ref library test'){
-      hello  
+       hello 'sambit'  
    }
    stage('Preparation') { // for display purposes
       // Get some code from a GitHub repository
