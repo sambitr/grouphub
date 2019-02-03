@@ -1,5 +1,12 @@
+def hello(){
+   sh 'echo "hello world"'
+}
+
 node('jenkins_slave_01') {
    def mvnHome
+   stage('ref library test'){
+      hello  
+   }
    stage('Preparation') { // for display purposes
       // Get some code from a GitHub repository
       git 'https://github.com/jglick/simple-maven-project-with-tests.git'
